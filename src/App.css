@@ -1,0 +1,14 @@
+body{
+    background-color: #000;
+}
+
+.logoLink{
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+}
+
+.logoLink img{
+    
+
+}
