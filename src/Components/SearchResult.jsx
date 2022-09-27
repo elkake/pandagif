@@ -18,7 +18,7 @@ function SearchResult() {
   // const handleNextPage = () => console.log('next-page');
 
   const debounceHandleNextPage = useCallback(
-    debounce(() => setPage(prev => prev + 1), 100),
+    debounce(() => setPage(prev => prev + 1), 500),
     []
   );
 

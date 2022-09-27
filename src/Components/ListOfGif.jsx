@@ -1,7 +1,9 @@
 import Gif from './Gif';
 import '../style/List.css';
+import { useGifs } from '../hooks/useGifs';
 
-function ListOfGif({ gifs }) {
+function ListOfGif() {
+  const { gifs } = useGifs();
   return (
     <div className="list-container">
       {gifs.map(e => (

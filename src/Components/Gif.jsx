@@ -1,6 +1,6 @@
 import '../style/Gif.css';
 import { Link } from 'react-router-dom';
-
+import { memo } from 'react';
 function Gif({ id, title, url }) {
   // const location = useLocation();
   // console.log(location.key);
@@ -13,4 +13,6 @@ function Gif({ id, title, url }) {
   );
 }
 
-export default Gif;
+export default memo(Gif, (prev, next) => {
+  return prev.id === next.id;
+});
