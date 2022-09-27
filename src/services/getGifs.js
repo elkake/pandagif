@@ -1,10 +1,14 @@
-const KeyAPI = 'JYeSIZAVXJ0kuqzKUIhjS8S9UlkxmIRn';
+import settings from './settings';
+export default function getGifs({
+  limit = 5,
+  keyword = 'groot',
+  page = 0,
+} = {}) {
+  const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${settings}&q=${keyword}&limit=${limit}&offset=${
+    page * limit
+  }&rating=g&lang=en`;
 
-export default function getGifs({ keyword = 'panda' } = {}) {
-  
-  return fetch(
-    `https://api.giphy.com/v1/gifs/search?api_key=${KeyAPI}&q=${keyword}&limit=10&offset=0&rating=g&lang=en`
-  )
+  return fetch(apiURL)
     .then(res => res.json())
     .then(response => {
       const { data } = response;

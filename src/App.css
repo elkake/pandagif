@@ -1,14 +1,26 @@
-body{
-    background-color: #000;
+body {
+  background-color: #000;
+  color: #fff;
 }
 
-.logoLink{
-    cursor: pointer;
-    border-radius: 50%;
-    display: flex;
+.logoLink {
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
 }
 
-.logoLink img{
-    
+.logoLink a {
+  width: 40px;
+  margin: auto;
+  border-radius: 50%;
+  margin-bottom: -20px;
+}
 
+.logoLink a img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.App h2 {
+  font-size: 12px;
 }

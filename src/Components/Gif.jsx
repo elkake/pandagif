@@ -1,12 +1,13 @@
 import '../style/Gif.css';
-import '../style/List.css';
-import { Link } from 'wouter';
+import { Link } from 'react-router-dom';
 
-function Gif({ keyword, id, title, url }) {
+function Gif({ id, title, url }) {
+  // const location = useLocation();
+  // console.log(location.key);
   return (
     <div className="gif_container">
-      <Link to={`/gif/${keyword}/${id}`} className="gif_link">
-        <img src={url} alt={title} />
+      <Link to={`/gif/${id}`} className="gif_link">
+        <img loading="lazy" src={url} alt={title} />
       </Link>
     </div>
   );

@@ -1,35 +1,42 @@
-import { Link, useLocation } from 'wouter';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useGifs } from '../hooks/useGifs';
+import ListOfGif from '../Components/ListOfGif';
+import Index from '../Components/TrendingSearch/Index';
+import Categories from '../module/Categories';
 const POPULAR_GIFS = ['rick', 'Morty', 'Panda', 'Polar'];
 
 function Home() {
   const [keyword, setKeyword] = useState('');
-  const [path, pushLocation] = useLocation();
-  console.log(location);
+  const navegar = useNavigate();
 
-  const buscarGif = e => {
+  const { gifs } = useGifs();
+
+  const handleSubmit = e => {
     e.preventDefault();
-    pushLocation(`/search/${keyword}`);
+    navegar(`/search/${keyword}`);
+  };
+
+  const handleChange = e => {
+    setKeyword(e.target.value);
   };
 
   return (
     <div>
-      <h3>Los gifs mas populares</h3>
-      <form action="" onSubmit={buscarGif}>
+      <form action="" onSubmit={handleSubmit}>
         <input
+          minLength="1"
+          autoComplete="off"
           type="text"
           placeholder="ingrese un dato"
-          onChange={e => setKeyword(e.target.value)}
+          onChange={handleChange}
         />
         <button>Buscar</button>
       </form>
-      <ul>
-        {POPULAR_GIFS.map(nombre => (
-          <li key={nombre}>
-            <Link to={`/search/${nombre}`}>Gifs de {nombre}</Link>
-          </li>
-        ))}
-      </ul>
+      <h3>Ultima busqueda</h3>
+      <ListOfGif gifs={gifs} />
+      <Categories name="Popular Gifs" options={POPULAR_GIFS} />
+      <Index />
     </div>
   );
 }

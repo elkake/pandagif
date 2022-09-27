@@ -1,3 +1,22 @@
+.gif_container {
+  background-color: #000;
+  color: #000;
+  text-decoration: none;
+  
+  width: 100%;
+}
 
+.gif_link {
+  color: #000;
+  display: block;
+  text-decoration: none;
+  position: relative;
+  
+}
 
+.gif_container img {
+  
+  width: 100%;
+  object-fit: cover;
+}
 
