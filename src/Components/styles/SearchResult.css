@@ -1,0 +1,26 @@
+.sr_container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.sr_title{
+    font-size: 2rem;
+    color: var(--rosa);
+    border-bottom: 2px solid var(--amarillo);
+    line-height: 24px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+.sr_result-container{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+#visor{
+    height: 20px;
+}

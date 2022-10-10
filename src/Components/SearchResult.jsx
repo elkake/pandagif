@@ -4,8 +4,9 @@ import Spinner from '../spinner/Spinner';
 import { useGifs } from '../hooks/useGifs';
 import { useParams } from 'react-router-dom';
 import useNearScreen from '../hooks/useNearScreen';
-import '../style/List.css';
 import debounce from 'just-debounce-it';
+import './styles/SearchResult.css';
+
 function SearchResult() {
   const { keyword } = useParams();
   const { loading, gifs, setPage } = useGifs({ keyword });
@@ -29,18 +30,21 @@ function SearchResult() {
   }, [isNearScreen]);
 
   return (
-    <>
+    <div className="sr_container">
       {loading ? (
         <Spinner />
       ) : (
         <>
-          <h3 style={{ color: 'red' }}>{keyword}</h3>
-          <ListOfGif gifs={gifs} />
-          <div id="visor" ref={externalRef}></div>
+          <h3 className="sr_title">{keyword}</h3>
+          <div className="sr_result-container">
+            <ListOfGif gifs={gifs} />
+            <Spinner />
+            <div id="visor" ref={externalRef}></div>
+          </div>
         </>
       )}
       {/* <button onClick={handleNextPage}>Get next page</button> */}
-    </>
+    </div>
   );
 }
 

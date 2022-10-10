@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import './styles/SearchForm.css';
+import { SiFoodpanda } from 'react-icons/si';
 
 function SearchForm({ onSubmit }) {
   const [keyword, setKeyword] = useState('');
@@ -12,15 +14,17 @@ function SearchForm({ onSubmit }) {
     setKeyword(e.target.value);
   };
   return (
-    <form action="" onSubmit={handleSubmit}>
+    <form className="form" action="" onSubmit={handleSubmit}>
       <input
         minLength="1"
         autoComplete="off"
         type="text"
-        placeholder="ingrese un dato"
+        placeholder="ingrese alguna palabta"
         onChange={handleChange}
       />
-      <button>Buscar</button>
+      <button>
+        <SiFoodpanda className="search_icon" />
+      </button>
     </form>
   );
 }

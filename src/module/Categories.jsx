@@ -1,17 +1,14 @@
 import { Link } from 'react-router-dom';
-
-function Categories({ name, options }) {
+import './Categories.css';
+function Categories({ options }) {
   return (
-    <div>
-      <h3>{name}</h3>
-      <div>
+    <ul className='ct_container'>
         {options.map(nombre => (
-          <li key={nombre}>
-            <Link to={`/search/${nombre}`}>Gifs de {nombre}</Link>
+          <li className='ct_links' key={nombre}>
+            <Link className='ct_link' to={`/search/${nombre}`}>Gifs de {nombre}</Link>
           </li>
         ))}
-      </div>
-    </div>
+    </ul>
   );
 }
 

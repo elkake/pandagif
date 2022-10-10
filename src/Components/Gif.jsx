@@ -1,9 +1,8 @@
-import '../style/Gif.css';
+import './styles/Gif.css';
 import { Link } from 'react-router-dom';
 import { memo } from 'react';
+
 function Gif({ id, title, url }) {
-  // const location = useLocation();
-  // console.log(location.key);
   return (
     <div className="gif_container">
       <Link to={`/gif/${id}`} className="gif_link">

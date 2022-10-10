@@ -1,8 +1,5 @@
 .gif_container {
-  background-color: #000;
-  color: #000;
   text-decoration: none;
-  
   width: 100%;
 }
 
@@ -11,12 +8,15 @@
   display: block;
   text-decoration: none;
   position: relative;
-  
+  height: 100%;
+  border-bottom: 2px solid var(--amarillo);
+  border-top: 2px solid var(--amarillo);
 }
 
 .gif_container img {
-  
+  height: 100%;
   width: 100%;
   object-fit: cover;
+  filter: saturate(150%);
 }
 

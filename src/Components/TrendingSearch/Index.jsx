@@ -5,7 +5,7 @@ import Spinner from '../../spinner/Spinner';
 const TrendingSearchs = lazy(() => import('./TrendingSearchs'));
 
 export default function LazyTrending() {
-  const { isNearScreen, fromRef } = useNearScreen({ distancia: '0px' });
+  const { isNearScreen, fromRef } = useNearScreen({ distancia: '150px' });
 
   return (
     <div ref={fromRef}>

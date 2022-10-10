@@ -1,5 +1,5 @@
 import Gif from './Gif';
-import '../style/List.css';
+import './styles/ListOfGif.css';
 import { useGifs } from '../hooks/useGifs';
 
 function ListOfGif() {

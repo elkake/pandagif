@@ -11,7 +11,7 @@ export default function TrendingSearchs() {
 
   return (
     <>
-      <Categories name="trending" options={trends} />
+      <Categories options={trends} />
     </>
   );
 }

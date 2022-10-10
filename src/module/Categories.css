@@ -1,0 +1,24 @@
+.ct_container{
+    
+}
+.ct_links{
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 0.2rem 1rem;
+}
+
+.ct_link{
+    text-decoration: none;
+    color: var(--amarillo);
+    border-bottom:2px solid transparent;
+}
+.ct_link:hover{
+    color: var(--rosa);
+    border-bottom:2px solid var(--amarillo);
+}
+
+@media (min-width: 500px){
+    .ct_links{
+        display: inline-block;
+    }
+  }

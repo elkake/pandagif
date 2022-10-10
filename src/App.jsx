@@ -1,21 +1,19 @@
 import './App.css';
 import Home from './Layout/Home';
-import logoimg from './img/logo.png';
+import logoimg from './img/pandaLogo.svg';
 import Detail from './Components/Detail';
 import { Routes, Route, Link } from 'react-router-dom';
 import SearchResult from './Components/SearchResult';
-import Context from './context/StaticContext';
 import { GifsContextProvider } from './context/GifContext';
 function App() {
   return (
-    <Context.Provider value={{ name: 'perez' }}>
       <div className="App">
         <div className="logoLink">
           <Link to="/">
-            <img src={logoimg} alt="" />
+            <img src={logoimg} alt="panda keyboard" />
+            <div className='logoLink_name'><p>PANDA</p><p>GIF</p></div>
           </Link>
         </div>
-        <h2>Gifs mas populares</h2>
         <GifsContextProvider>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -25,7 +23,6 @@ function App() {
           </Routes>
         </GifsContextProvider>
       </div>
-    </Context.Provider>
   );
 }
 

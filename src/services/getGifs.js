@@ -1,7 +1,7 @@
 import settings from './settings';
 export default function getGifs({
-  limit = 5,
-  keyword = 'groot',
+  limit = 20,
+  keyword = 'panda',
   page = 0,
 } = {}) {
   const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${settings}&q=${keyword}&limit=${limit}&offset=${
